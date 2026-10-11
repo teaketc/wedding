@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>งานมงคลสมรส ศรายุทธ & ชลัทธร | The Sustainable Wedding</title>
+  <style>
+    :root {
+      --teal-dark: #0F3B36;
+      --teal-primary: #174E47;
+      --teal-light: #E5EFEA;
+      --teal-tint: #F0F6F3;
+      --earth-brown: #5C4331;
+      --earth-wood: #785A43;
+      --earth-sand: #C9A87C;
+      --cream-bg: #F8F5EE;
+      --cream-card: #FFFFFF;
+      --text-main: #202725;
+      --text-muted: #596561;
+      --border-subtle: #D8E2DC;
+      --border-earth: #D9CBBD;
+      --shadow-sm: 0 4px 16px rgba(15, 59, 54, 0.05);
+      --shadow-md: 0 10px 30px rgba(15, 59, 54, 0.08);
+      --font-serif: 'Noto Serif Thai', 'Baskerville', 'Georgia', serif;
+      --font-sans: 'Noto Sans Thai', 'Leelawadee UI', -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--cream-bg);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      position: relative;
+      overflow-x: hidden;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Outer Wrapper */
+    .app-container {
+      width: 100%;
+      max-width: 520px;
+      min-height: 100vh;
+      background: #FFFFFF;
+      box-shadow: 0 0 50px rgba(15, 59, 54, 0.08);
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Floating Controls */
+    .floating-actions {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 100;
+    }
+
+    .float-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 1px solid var(--border-earth);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--teal-primary);
+      font-size: 19px;
+      transition: all 0.25s ease;
+    }
+
+    .float-btn:hover {
+      transform: scale(1.06);
+      background: var(--teal-tint);
+    }
+
+    .float-btn.active {
+      background: var(--teal-primary);
+      color: #FFFFFF;
+      border-color: var(--teal-primary);
+    }
+
+    /* Sections */
+    section {
+      padding: 44px 26px;
+      position: relative;
+      text-align: center;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--teal-primary);
+      background: var(--teal-light);
+      padding: 3px 14px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 23px;
+      color: var(--teal-dark);
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .section-sub {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-top: 6px;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .divider-minimal {
+      width: 48px;
+      height: 2px;
+      background: var(--earth-sand);
+      margin: 18px auto 26px;
+      border-radius: 2px;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(180deg, #F2EFE8 0%, #FAF8F5 60%, #FFFFFF 100%);
+      padding: 65px 24px 44px;
+      position: relative;
+      border-bottom: 1px solid var(--border-subtle);
+      text-align: center;
+    }
+
+    .eco-badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      color: var(--earth-brown);
+      background: rgba(92, 67, 49, 0.08);
+      border: 1px solid rgba(92, 67, 49, 0.15);
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 22px;
+    }
+
+    .monogram-badge {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      border: 1.5px solid var(--teal-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FFFFFF;
+      position: relative;
+      box-shadow: 0 6px 20px rgba(15, 59, 54, 0.08);
+    }
+
+    .monogram-badge::after {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      border: 1px solid var(--earth-sand);
+      border-radius: 50%;
+    }
+
+    .monogram-text {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      color: var(--teal-dark);
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-left: 2px;
+    }
+
+    .hero-pretitle {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .hero-intro-text {
+      font-size: 14.5px;
+      color: var(--earth-brown);
+      margin-bottom: 22px;
+    }
+
+    .couple-container {
+      margin: 20px 0;
+    }
+
+    .couple-card-name {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--teal-dark);
+      line-height: 1.25;
+      letter-spacing: 0.5px;
+    }
+
+    .couple-card-role {
+      font-size: 12.5px;
+      color: var(--earth-wood);
+      margin-top: 4px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .couple-and {
+      margin: 12px 0;
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: var(--earth-sand);
+      font-style: italic;
+    }
+
+    .hero-concept-quote {
+      margin: 26px 10px 0;
+      padding: 16px 20px;
+      background: rgba(23, 78, 71, 0.04);
+      border-radius: 12px;
+      border-left: 3px solid var(--teal-primary);
+      font-size: 13.5px;
+      color: var(--teal-dark);
+      font-style: italic;
+      text-align: left;
+      line-height: 1.6;
+    }
+
+    /* Countdown Section */
+    .countdown-section {
+      background: var(--teal-tint);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .date-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      padding: 9px 22px;
+      border-radius: 30px;
+      border: 1px solid var(--border-subtle);
+      color: var(--teal-dark);
+      font-weight: 700;
+      font-size: 15px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 16px;
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 18px 0;
+    }
+
+    .countdown-box {
+      background: #FFFFFF;
+      padding: 14px 6px;
+      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .countdown-num {
+      font-family: var(--font-serif);
+      font-size: 27px;
+      font-weight: 700;
+      color: var(--teal-dark);
+      line-height: 1.1;
+    }
+
+    .countdown-label {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    .calendar-actions {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .btn-cal {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FFFFFF;
+      border: 1px solid var(--teal-primary);
+      color: var(--teal-primary);
+      padding: 9px 18px;
+      border-radius: 25px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-cal:hover {
+      background: var(--teal-primary);
+      color: #FFFFFF;
+    }
+
+    /* Sustainability Feature Section */
+    .sustainability-section {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+      text-align: left;
+    }
+
+    .concept-cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .concept-card {
+      background: var(--cream-bg);
+      border-radius: 14px;
+      padding: 20px;
+      border: 1px solid var(--border-earth);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: transform 0.2s ease;
+    }
+
+    .concept-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--teal-primary);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(23, 78, 71, 0.2);
+    }
+
+    .concept-content h4 {
+      font-size: 16px;
+      color: var(--teal-dark);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .concept-content p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .concept-tagline {
+      margin-top: 20px;
+      background: var(--teal-tint);
+      border: 1px dashed var(--teal-primary);
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 13px;
+      color: var(--teal-dark);
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* Timeline Section */
+    .timeline-section {
+      background: #FAF8F5;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .timeline-container {
+      margin: 24px 0 10px;
+      position: relative;
+      padding-left: 20px;
+      text-align: left;
+    }
+
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      left: 39px;
+      top: 15px;
+      bottom: 25px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--teal-primary) 0%, rgba(23, 78, 71, 0.2) 100%);
+    }
+
+    .timeline-item {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 26px;
+    }
+
+    .timeline-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--teal-light);
+      border: 2px solid var(--teal-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--teal-primary);
+      font-size: 17px;
+      flex-shrink: 0;
+      z-index: 2;
+    }
+
+    .timeline-content {
+      margin-left: 18px;
+      background: #FFFFFF;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+      flex-grow: 1;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .timeline-time {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--teal-primary);
+    }
+
+    .timeline-event {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-top: 2px;
+    }
+
+    .timeline-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    /* Venue Section */
+    .venue-section {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .venue-card {
+      background: var(--cream-bg);
+      border-radius: 16px;
+      border: 1px solid var(--border-earth);
+      padding: 24px 20px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .venue-name {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--teal-dark);
+      margin-bottom: 4px;
+    }
+
+    .venue-sub {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--earth-wood);
+      margin-bottom: 10px;
+    }
+
+    .venue-address {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.55;
+    }
+
+    .venue-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-dark) 100%);
+      color: #FFFFFF;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(23, 78, 71, 0.25);
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(23, 78, 71, 0.35);
+    }
+
+    .btn-secondary {
+      background: #FFFFFF;
+      color: var(--teal-dark);
+      border: 1px solid var(--border-earth);
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background: #FAF6F0;
+    }
+
+    .venue-tips {
+      margin-top: 18px;
+      padding: 14px;
+      background: #FFFFFF;
+      border-radius: 10px;
+      font-size: 12.5px;
+      color: var(--text-muted);
+      border: 1px solid var(--border-subtle);
+      text-align: left;
+      line-height: 1.6;
+    }
+
+    /* Dress Code Section */
+    .dress-section {
+      background: #FAF8F5;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .dress-code-palette {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin: 22px 0 14px;
+      flex-wrap: wrap;
+    }
+
+    .swatch-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .swatch-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+      border: 2px solid #FFFFFF;
+      transition: transform 0.2s ease;
+    }
+
+    .swatch-circle:hover {
+      transform: scale(1.08);
+    }
+
+    .swatch-name {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* RSVP Form */
+    .rsvp-section {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+      text-align: left;
+    }
+
+    .rsvp-form {
+      background: var(--cream-bg);
+      padding: 24px 20px;
+      border-radius: 16px;
+      border: 1px solid var(--border-earth);
+      margin-top: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--teal-dark);
+      margin-bottom: 6px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: 10px;
+      border: 1px solid #D1C7BA;
+      background: #FFFFFF;
+      font-family: inherit;
+      font-size: 14px;
+      color: var(--text-main);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-control:focus {
+      border-color: var(--teal-primary);
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 16px;
+      margin-top: 6px;
+    }
+
+    .radio-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13.5px;
+      cursor: pointer;
+      color: var(--text-main);
+    }
+
+    /* Wishes Wall */
+    .wishes-section {
+      background: #FAF8F5;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .wishes-list {
+      margin-top: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-height: 380px;
+      overflow-y: auto;
+      padding-right: 4px;
+      text-align: left;
+    }
+
+    .wish-card {
+      background: #FFFFFF;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border-left: 4px solid var(--teal-primary);
+      border-top: 1px solid var(--border-subtle);
+      border-right: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 13.5px;
+    }
+
+    .wish-sender {
+      font-weight: 700;
+      color: var(--teal-dark);
+      font-size: 14px;
+    }
+
+    .wish-time {
+      font-size: 11px;
+      color: #999;
+      float: right;
+    }
+
+    .wish-body {
+      margin-top: 6px;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    /* Gift / Blessing Box */
+    .gift-section {
+      background: #FFFFFF;
+    }
+
+    .gift-box {
+      background: var(--cream-bg);
+      border-radius: 16px;
+      border: 1px solid var(--border-earth);
+      padding: 22px;
+      margin-top: 20px;
+    }
+
+    .bank-card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 14px;
+      border: 1px solid var(--border-earth);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .copy-pill {
+      background: var(--teal-light);
+      color: var(--teal-dark);
+      border: 1px solid var(--teal-primary);
+      border-radius: 15px;
+      padding: 4px 14px;
+      font-size: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-top: 4px;
+      transition: all 0.2s;
+    }
+
+    .copy-pill:hover {
+      background: var(--teal-primary);
+      color: #FFFFFF;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--teal-dark);
+      color: #D2DED8;
+      padding: 44px 24px;
+      text-align: center;
+      margin-top: auto;
+    }
+
+    footer .names {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    footer p {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 59, 54, 0.6);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background: #FFFFFF;
+      width: 100%;
+      max-width: 380px;
+      border-radius: 20px;
+      padding: 30px 24px;
+      text-align: center;
+      border: 1px solid var(--border-earth);
+      box-shadow: var(--shadow-md);
+    }
+
+    .modal-icon {
+      font-size: 44px;
+      margin-bottom: 12px;
+    }
+
+    .modal-title {
+      font-family: var(--font-serif);
+      font-size: 21px;
+      color: var(--teal-dark);
+      margin-bottom: 8px;
+    }
+
+    .modal-msg {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+      line-height: 1.55;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 85px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(15, 59, 54, 0.94);
+      color: #FFFFFF;
+      padding: 10px 22px;
+      border-radius: 25px;
+      font-size: 13px;
+      z-index: 1000;
+      display: none;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Audio Toggle -->
+  <div class="floating-actions">
+    <button class="float-btn" id="musicToggleBtn" title="เปิด/ปิดดนตรีบรรเลงอบอุ่น" onclick="toggleMusic()">
+      🌿
+    </button>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">คัดลอกข้อความเรียบร้อยแล้ว</div>
+
+  <!-- Confirmation Modal -->
+  <div class="modal-overlay" id="confirmModal">
+    <div class="modal-content">
+      <div class="modal-icon">🌱</div>
+      <h3 class="modal-title" id="modalTitle">ขอบพระคุณเป็นอย่างยิ่ง</h3>
+      <p class="modal-msg" id="modalMsg">เราได้รับข้อมูลตอบรับของท่านเรียบร้อยแล้ว แล้วพบกันในวันงานมงคลสมรส</p>
+      <button class="btn-primary" onclick="closeModal()">ตกลง</button>
+    </div>
+  </div>
+
+  <div class="app-container">
+    
+    <!-- Hero Section -->
+    <header class="hero-section">
+      <div class="eco-badge-top">
+        <span>🌱</span> SUSTAINABLE WEDDING CELEBRATION
+      </div>
+
+      <div class="monogram-badge">
+        <span class="monogram-text">S &amp; C</span>
+      </div>
+
+      <div class="hero-pretitle">WEDDING INVITATION</div>
+      <div class="hero-intro-text">
+        ขอเรียนเชิญร่วมเป็นเกียรติและร่วมเป็นสักขีพยาน<br>ในพิธีมงคลสมรสและฉลองมงคลสมรส
+      </div>
+
+      <div class="couple-container">
+        <div>
+          <div class="couple-card-name">คุณศรายุทธ ชูพันธุ์</div>
+          <div class="couple-card-role">เจ้าบ่าว (Groom)</div>
+        </div>
+        <div class="couple-and">&amp;</div>
+        <div>
+          <div class="couple-card-name">คุณชลัทธร ศรีพงษ์</div>
+          <div class="couple-card-role">เจ้าสาว (Bride)</div>
+        </div>
+      </div>
+
+      <div class="hero-concept-quote">
+        “ความรักที่แท้จริง คือการเติบโตอย่างมั่นคง ดูแลซึ่งกันและกัน และส่งต่อคุณค่าที่ยั่งยืนสู่โลกรอบตัว”
+      </div>
+    </header>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+      <div class="date-pill">
+        <span>🗓️</span> วันเสาร์ที่ 5 ธันวาคม 2569 (2026)
+      </div>
+      <div class="section-sub">COUNTDOWN TO OUR SPECIAL DAY</div>
+
+      <div class="countdown-grid">
+        <div class="countdown-box">
+          <div class="countdown-num" id="cd-days">00</div>
+          <div class="countdown-label">วัน</div>
+        </div>
+        <div class="countdown-box">
+          <div class="countdown-num" id="cd-hours">00</div>
+          <div class="countdown-label">ชั่วโมง</div>
+        </div>
+        <div class="countdown-box">
+          <div class="countdown-num" id="cd-mins">00</div>
+          <div class="countdown-label">นาที</div>
+        </div>
+        <div class="countdown-box">
+          <div class="countdown-num" id="cd-secs">00</div>
+          <div class="countdown-label">วินาที</div>
+        </div>
+      </div>
+
+      <div class="calendar-actions">
+        <a class="btn-cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%A1%E0%B8%87%E0%B8%84%E0%B8%A5%E0%B8%AA%E0%B8%A1%E0%B8%A3%E0%B8%AA+%E0%B8%A8%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%B8%E0%B8%97%E0%B8%98+%26+%E0%B8%8A%E0%B8%A5%E0%B8%B1%E0%B8%97%E0%B8%98%E0%B8%A3&dates=20261205T030000Z/20261205T080000Z&details=%E0%B8%9E%E0%B8%B4%E0%B8%98%E0%B8%B5%E0%B8%A1%E0%B8%87%E0%B8%84%E0%B8%A5%E0%B8%AA%E0%B8%A1%E0%B8%A3%E0%B8%AA%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%89%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%A1%E0%B8%87%E0%B8%84%E0%B8%A5%E0%B8%AA%E0%B8%A1%E0%B8%A3%E0%B8%AA+%E0%B8%A8%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%B8%E0%B8%97%E0%B8%98+%E0%B8%8A%E0%B8%B9%E0%B8%9E%E0%B8%B1%E0%B8%99%E0%B8%98%E0%B8%8F%E0%B9%8C+%E0%B9%81%E0%B8%A5%E0%B8%B0+%E0%B8%8A%E0%B8%A5%E0%B8%B1%E0%B8%97%E0%B8%98%E0%B8%A3+%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%9E%E0%B8%87%E0%B8%A9%E0%B9%8C&location=%E0%B8%AD%E0%B8%B2%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%99%E0%B8%A1+%E0%B8%AA%E0%B8%B8%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9E%E0%B8%B4%E0%B8%97%E0%B8%B1%E0%B8%81%E0%B8%A9%E0%B9%8C+%E0%B8%AD%E0%B8%99%E0%B8%B8%E0%B8%AA%E0%B8%A3%E0%B8%93%E0%B9%8C+%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A5%E0%B8%B1%E0%B8%A2%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B8%9A%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B8%B4%E0%B8%92%E0%B8%A2%E0%B9%8C" target="_blank">
+          <span>📅</span> Google Calendar
+        </a>
+        <button class="btn-cal" onclick="downloadICS()">
+          <span>📥</span> บันทึกปฏิทิน (.ics)
+        </button>
+      </div>
+    </section>
+
+    <!-- Sustainable Wedding Concept Showcase -->
+    <section class="sustainability-section">
+      <div style="text-align: center;">
+        <span class="section-tag">SUSTAINABILITY &amp; LOVE</span>
+        <div class="section-title">แนวคิดงานแต่งงานเพื่อความยั่งยืน</div>
+        <div class="divider-minimal"></div>
+        <div class="section-sub">
+          เราตั้งใจให้งานมงคลสมรสครั้งนี้สร้างขยะน้อยที่สุด (Zero-Waste Wedding) เพื่อให้ความรักของเราเติบโตเคียงข้างธรรมชาติและส่งต่อประโยชน์กลับคืนสู่ทุกท่าน
+        </div>
+      </div>
+
+      <div class="concept-cards-container">
+        <!-- Card 1: Edible Backdrop -->
+        <div class="concept-card">
+          <div class="concept-icon-wrap">🥦</div>
+          <div class="concept-content">
+            <h4>Backdrop จากผักผลไม้สด (Edible Backdrop)</h4>
+            <p>
+              จุดถ่ายภาพและฉากตกแต่งภายในงาน รังสรรค์จากผักผลไม้สดตามฤดูกาลจากเกษตรกรไทย โดยหลังจบงาน ขอเรียนเชิญแขกทุกท่าน <strong>ร่วมเก็บเกี่ยวผักผลไม้สดกลับบ้าน</strong> เพื่อนำไปปรุงอาหารรับประทานกับครอบครัวอย่างคุ้มค่า
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2: IKEA Reusable Bag Favor -->
+        <div class="concept-card">
+          <div class="concept-icon-wrap">🛍️</div>
+          <div class="concept-content">
+            <h4>ของชำร่วยถุงใส่ของอิเกีย (IKEA Reusable Bag)</h4>
+            <p>
+              ของชำร่วยที่เราคัดสรรอย่างตั้งใจ คือ <strong>ถุงใส่ของ IKEA</strong> ที่มีความทนทานสูง ดีไซน์เรียบเท่ ใช้งานซ้ำได้ยาวนานในชีวิตประจำวัน หากชำรุดสามารถนำไปเปลี่ยนใหม่ได้ตามเงื่อนไขของอิเกีย เพื่อให้ทุกท่านใช้ใส่ผักผลไม้จาก Backdrop กลับบ้านอย่างสะดวก
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3: Digital E-Wedding -->
+        <div class="concept-card">
+          <div class="concept-icon-wrap">📱</div>
+          <div class="concept-content">
+            <h4>การ์ดเชิญดิจิทัล ลดขยะกระดาษ (Paperless E-Card)</h4>
+            <p>
+              เราเลือกใช้การ์ดแต่งงานอิเล็กทรอนิกส์ (E-Wedding) และระบบลงทะเบียนออนไลน์ เพื่อลดการใช้กระดาษและพลังงาน ช่วยลดคาร์บอนฟุตพริ้นต์ให้กับโลกใบนี้
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="concept-tagline">
+        🌿 <em>“ของตกแต่งที่นำไปทานได้ และของชำร่วยที่ใช้งานได้จริงตลอดไป ขอบพระคุณทุกท่านที่ร่วมสร้างงานแต่งงานที่อบอุ่นและยั่งยืนกับเรา”</em>
+      </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="timeline-section">
+      <span class="section-tag">SCHEDULE</span>
+      <div class="section-title">กำหนดการพิธีการ</div>
+      <div class="divider-minimal"></div>
+
+      <div class="timeline-container">
+        <!-- 10:00 AM -->
+        <div class="timeline-item">
+          <div class="timeline-icon">📸</div>
+          <div class="timeline-content">
+            <div class="timeline-time">10:00 น.</div>
+            <div class="timeline-event">ลงทะเบียนและร่วมถ่ายภาพ</div>
+            <div class="timeline-desc">
+              ต้อนรับแขกผู้มีเกียรติ รับของชำร่วยถุงใส่ของอิเกีย และร่วมบันทึกภาพความประทับใจร่วมกับเจ้าบ่าวเจ้าสาว ณ ฉากผักผลไม้สดรักษ์โลก
+            </div>
+          </div>
+        </div>
+
+        <!-- 11:00 AM -->
+        <div class="timeline-item">
+          <div class="timeline-icon">💍</div>
+          <div class="timeline-content">
+            <div class="timeline-time">11:00 น. เป็นต้นไป</div>
+            <div class="timeline-event">พิธีการ และงานสังสรรค์</div>
+            <div class="timeline-desc">
+              พิธีการมงคลสมรส ร่วมรับประทานอาหารกลางวัน ฉลองความรัก และเปิดโอกาสให้แขกผู้มีเกียรติร่วมเก็บเกี่ยวผักผลไม้สดกลับบ้าน
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Venue Section -->
+    <section class="venue-section">
+      <span class="section-tag">LOCATION</span>
+      <div class="section-title">สถานที่จัดงาน</div>
+      <div class="divider-minimal"></div>
+
+      <div class="venue-card">
+        <div class="venue-name">อาคารสนม สุทธิพิทักษ์ อนุสรณ์</div>
+        <div class="venue-sub">มหาวิทยาลัยธุรกิจบัณฑิตย์ (DPU)</div>
+        <div class="venue-address">
+          เลขที่ 110/1-4 ถนนประชาชื่น แขวงทุ่งสองห้อง<br>
+          เขตหลักสี่ กรุงเทพมหานคร 10210
+        </div>
+
+        <div class="venue-actions">
+          <a class="btn-primary" href="https://maps.google.com/?q=%E0%B8%AD%E0%B8%B2%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%99%E0%B8%A1+%E0%B8%AA%E0%B8%B8%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%9E%E0%B8%B4%E0%B8%97%E0%B8%B1%E0%B8%81%E0%B8%A9%E0%B9%8C+%E0%B8%AD%E0%B8%99%E0%B8%B8%E0%B8%AA%E0%B8%A3%E0%B8%93%E0%B9%8C+%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A5%E0%B8%B1%E0%B8%A2%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B8%9A%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B8%B4%E0%B8%92%E0%B8%A2%E0%B9%8C" target="_blank">
+            <span>📍</span> เปิดแผนที่นำทาง (Google Maps)
+          </a>
+          <button class="btn-secondary" onclick="copyAddress()">
+            <span>📋</span> คัดลอกที่อยู่สถานที่จัดงาน
+          </button>
+        </div>
+
+        <div class="venue-tips">
+          🚗 <strong>ข้อมูลที่จอดรถ &amp; การเดินทาง:</strong><br>
+          • มีอาคารจอดรถภายในมหาวิทยาลัยธุรกิจบัณฑิตย์รองรับอย่างสะดวก<br>
+          • แนะนำการเดินทางด้วยรถยนต์ร่วมกัน (Carpool) หรือระบบขนส่งสาธารณะเพื่อช่วยลดมลพิษ
+        </div>
+      </div>
+    </section>
+
+    <!-- Dress Code Section -->
+    <section class="dress-section">
+      <span class="section-tag">DRESS CODE</span>
+      <div class="section-title">ธีมการแต่งกาย</div>
+      <div class="divider-minimal"></div>
+
+      <div class="section-sub">
+        ขอความกรุณาแต่งกายด้วยชุดสุภาพ เรียบหรู ในโทนสี <strong>Earth Tone</strong>
+      </div>
+
+      <div class="dress-code-palette">
+        <!-- Deep Teal -->
+        <div class="swatch-item">
+          <div class="swatch-circle" style="background: #174E47;"></div>
+          <div class="swatch-name">เขียวหัวเป็ด</div>
+        </div>
+        <!-- Earth Brown -->
+        <div class="swatch-item">
+          <div class="swatch-circle" style="background: #5C4331;"></div>
+          <div class="swatch-name">น้ำตาลธรรมชาติ</div>
+        </div>
+        <!-- Warm Cream -->
+        <div class="swatch-item">
+          <div class="swatch-circle" style="background: #F3EBDD; border-color: #D1C7BA;"></div>
+          <div class="swatch-name">ครีม / เบจ</div>
+        </div>
+        <!-- Olive -->
+        <div class="swatch-item">
+          <div class="swatch-circle" style="background: #606C5D;"></div>
+          <div class="swatch-name">เขียวโอลีฟ</div>
+        </div>
+        <!-- Warm Tan -->
+        <div class="swatch-item">
+          <div class="swatch-circle" style="background: #A6805E;"></div>
+          <div class="swatch-name">แทน / คาราเมล</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="rsvp-section">
+      <div style="text-align: center;">
+        <span class="section-tag">RSVP</span>
+        <div class="section-title">ตอบรับเข้าร่วมงาน</div>
+        <div class="divider-minimal"></div>
+        <div class="section-sub">
+          เพื่อการจัดเตรียมอาหารและของชำร่วยอย่างพอเหมาะ ไม่เหลือทิ้ง<br>กราบเรียนเชิญทุกท่านร่วมตอบรับการเข้าร่วมงานล่วงหน้า
+        </div>
+      </div>
+
+      <form class="rsvp-form" id="rsvpForm" onsubmit="handleRSVP(event)">
+        <div class="form-group">
+          <label for="guestName">ชื่อ - นามสกุล ของท่าน *</label>
+          <input type="text" id="guestName" class="form-control" placeholder="เช่น คุณสมชาย ใจดี" required>
+        </div>
+
+        <div class="form-group">
+          <label for="guestPhone">เบอร์โทรศัพท์ หรือ LINE ID</label>
+          <input type="text" id="guestPhone" class="form-control" placeholder="081-xxx-xxxx">
+        </div>
+
+        <div class="form-group">
+          <label>ความพร้อมในการร่วมงาน *</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="attendance" value="attend" checked> ยินดีมาร่วมงาน
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="attendance" value="cannot"> ไม่สะดวกมาร่วมงาน
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group" id="guestCountGroup">
+          <label for="guestCount">จำนวนผู้ร่วมงาน (ท่าน)</label>
+          <select id="guestCount" class="form-control">
+            <option value="1">1 ท่าน (ตนเอง)</option>
+            <option value="2">2 ท่าน</option>
+            <option value="3">3 ท่าน</option>
+            <option value="4">4 ท่าน</option>
+            <option value="5">5 ท่านขึ้นไป</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="guestDiet">อาหารที่รับประทาน</label>
+          <select id="guestDiet" class="form-control">
+            <option value="normal">รับประทานได้ทั่วไป</option>
+            <option value="vegetarian">มังสวิรัติ (Vegetarian)</option>
+            <option value="vegan">วีแกน / เจ (Vegan)</option>
+            <option value="halal">อิสลาม / ฮาลาล (Halal)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="guestNote">ข้อความถึงคู่บ่าวสาว</label>
+          <input type="text" id="guestNote" class="form-control" placeholder="ฝากคำอวยพรหรือข้อแนะนำ">
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 8px;">
+          ยืนยันการตอบรับเข้าร่วมงาน
+        </button>
+      </form>
+    </section>
+
+    <!-- Digital Wishes Section -->
+    <section class="wishes-section">
+      <span class="section-tag">GUESTBOOK</span>
+      <div class="section-title">สมุดประสาทพรออนไลน์</div>
+      <div class="divider-minimal"></div>
+      <div class="section-sub">ร่วมส่งความรักและความปรารถนาดีแก่คู่บ่าวสาว</div>
+
+      <form class="rsvp-form" id="wishForm" onsubmit="handleWish(event)" style="margin-top: 18px;">
+        <div class="form-group">
+          <input type="text" id="wishSender" class="form-control" placeholder="ชื่อผู้ร่วมอวยพร" required>
+        </div>
+        <div class="form-group">
+          <textarea id="wishMessage" class="form-control" rows="3" placeholder="เขียนข้อความอวยพรคู่บ่าวสาว..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width: 100%;">
+          ส่งคำอวยพร 🌿
+        </button>
+      </form>
+
+      <div class="wishes-list" id="wishesContainer">
+        <!-- Sample Initial Wishes tailored to the couple -->
+        <div class="wish-card">
+          <div><span class="wish-sender">ครอบครัวและเพื่อนร่วมงาน</span> <span class="wish-time">เมื่อสักครู่</span></div>
+          <div class="wish-body">ชอบไอเดียงานแต่งงานรักษ์โลกของทั้งคู่มากๆ เลยครับ ขอให้ความรักของศรายุทธและชลัทธรเบ่งบาน ยั่งยืน และมีความสุขในทุกๆ วันนะ! 🌱✨</div>
+        </div>
+        <div class="wish-card">
+          <div><span class="wish-sender">ญาติสนิทมิตรสหาย</span> <span class="wish-time">1 ชม. ที่แล้ว</span></div>
+          <div class="wish-body">ยินดีด้วยอย่างยิ่งกับการเริ่มต้นชีวิตคู่ที่แสนอบอุ่นและมีคุณค่าต่อโลก ขอให้รักและเข้าใจกันตลอดไปจ้า ❤️</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gift / Blessing Box -->
+    <section class="gift-section">
+      <span class="section-tag">BLESSINGS</span>
+      <div class="section-title">ร่วมแสดงความยินดี</div>
+      <div class="divider-minimal"></div>
+      <div class="section-sub">
+        การมาร่วมเป็นเกียรติและรอยยิ้มของทุกท่านคือของขวัญอันล้ำค่าที่สุดสำหรับเรา
+      </div>
+
+      <div class="gift-box">
+        <div style="font-size: 14.5px; font-weight: 700; color: var(--teal-dark);">
+          บัญชีเพื่อร่วมแสดงความยินดี
+        </div>
+        <div style="font-size: 12.5px; color: var(--text-muted); margin-top: 4px;">
+          สำหรับท่านที่ไม่สะดวกมาร่วมงานแต่ประสงค์จะส่งมอบของขวัญ
+        </div>
+
+        <div class="bank-card">
+          <div style="font-weight: 700; color: var(--teal-dark); font-size: 15px;">
+            คุณศรายุทธ ชูพันธุ์ &amp; คุณชลัทธร ศรีพงษ์
+          </div>
+          <div style="font-size: 13px; color: var(--earth-brown);">
+            ธนาคารกสิกรไทย (KBANK)
+          </div>
+          <div style="font-family: monospace; font-size: 18px; font-weight: bold; color: var(--teal-primary); letter-spacing: 1.5px;">
+            xxx-x-xxxxx-x
+          </div>
+          <button class="copy-pill" onclick="copyAccountNumber('xxx-x-xxxxx-x')">
+            คัดลอกเลขบัญชี
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="names">ศรายุทธ &amp; ชลัทธร</div>
+      <p style="margin-bottom: 8px;">
+        ขอขอบพระคุณแขกผู้มีเกียรติทุกท่าน<br>
+        ที่ร่วมเป็นเกียรติและร่วมสร้างความทรงจำที่อบอุ่นและยั่งยืนร่วมกับเรา
+      </p>
+      <div style="font-size: 12px; opacity: 0.75; margin-top: 18px;">
+        #SarayutChalatthornWedding • 5 ธันวาคม 2569 • Zero Waste Celebration
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // --- Countdown Timer ---
+    const targetDate = new Date('2026-12-05T10:00:00+07:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        document.getElementById('cd-days').innerText = String(days).padStart(2, '0');
+        document.getElementById('cd-hours').innerText = String(hours).padStart(2, '0');
+        document.getElementById('cd-mins').innerText = String(minutes).padStart(2, '0');
+        document.getElementById('cd-secs').innerText = String(seconds).padStart(2, '0');
+      } else {
+        document.getElementById('cd-days').innerText = '00';
+        document.getElementById('cd-hours').innerText = '00';
+        document.getElementById('cd-mins').innerText = '00';
+        document.getElementById('cd-secs').innerText = '00';
+      }
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // --- Toast Notification ---
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.style.display = 'block';
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 2600);
+    }
+
+    // --- Copy Functions ---
+    function copyAddress() {
+      const addr = "อาคารสนม สุทธิพิทักษ์ อนุสรณ์ มหาวิทยาลัยธุรกิจบัณฑิตย์ (DPU) 110/1-4 ถนนประชาชื่น แขวงทุ่งสองห้อง เขตหลักสี่ กรุงเทพมหานคร 10210";
+      navigator.clipboard.writeText(addr).then(() => {
+        showToast("คัดลอกที่อยู่สถานที่จัดงานเรียบร้อยแล้ว");
+      }).catch(() => {
+        showToast("คัดลอกที่อยู่สถานที่จัดงานเรียบร้อยแล้ว");
+      });
+    }
+
+    function copyAccountNumber(acc) {
+      navigator.clipboard.writeText(acc).then(() => {
+        showToast("คัดลอกเลขบัญชีเรียบร้อยแล้ว");
+      }).catch(() => {
+        showToast("คัดลอกเลขบัญชีเรียบร้อยแล้ว");
+      });
+    }
+
+    // --- Download .ics file ---
+    function downloadICS() {
+      const icsContent = 
+`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sarayut & Chalatthorn Sustainable Wedding//TH
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+SUMMARY:งานมงคลสมรส คุณศรายุทธ ชูพันธุ์ & คุณชลัทธร ศรีพงษ์ (Sustainable Wedding)
+DTSTART:20261205T030000Z
+DTEND:20261205T080000Z
+LOCATION:อาคารสนม สุทธิพิทักษ์ อนุสรณ์ มหาวิทยาลัยธุรกิจบัณฑิตย์ (DPU)
+DESCRIPTION:ขอเรียนเชิญร่วมพิธีมงคลสมรสและฉลองมงคลสมรส คุณศรายุทธ ชูพันธุ์ และ คุณชลัทธร ศรีพงษ์ ธีมงานเน้นความยั่งยืน ร่วมเก็บเกี่ยวผักผลไม้สดจาก Backdrop ใส่ถุงช้อปปิ้งอิเกียกลับบ้าน
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR`;
+
+      const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.setAttribute('download', 'sustainable_wedding_sarayut_chalatthorn.ics');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      showToast("ดาวน์โหลดไฟล์ปฏิทิน (.ics) เรียบร้อย");
+    }
+
+    // --- RSVP handler ---
+    async function handleRSVP(e) {
+      e.preventDefault();
+      const name = document.getElementById('guestName').value;
+      const phone = document.getElementById('guestPhone').value;
+      const attendance = document.querySelector('input[name="attendance"]:checked').value;
+      const count = document.getElementById('guestCount').value;
+      const diet = document.getElementById('guestDiet').value;
+      const note = document.getElementById('guestNote').value;
+
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn ? submitBtn.innerText : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'กำลังบันทึกข้อมูล...';
+      }
+
+      try {
+        const apiUrl = window.RSVP_API_URL || 'http://localhost:8787/api/rsvps';
+        await fetch(apiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            full_name: name,
+            phone_or_line: phone,
+            attendance: attendance,
+            guest_count: Number(count),
+            dietary_preference: diet,
+            wishes: note
+          })
+        });
+      } catch (err) {
+        console.warn('API Error:', err);
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerText = originalBtnText;
+        }
+      }
+
+      document.getElementById('modalTitle').innerText = 'ขอบพระคุณเป็นอย่างยิ่ง';
+      if (attendance === 'attend') {
+        document.getElementById('modalMsg').innerText = `คุณ ${name} ได้ตอบรับเข้าร่วมงาน (${count} ท่าน) เรียบร้อยแล้ว ขอขอบพระคุณที่ร่วมสร้างความทรงจำที่ยั่งยืนไปกับเรา`;
+      } else {
+        document.getElementById('modalMsg').innerText = `ขอขอบพระคุณคุณ ${name} ที่แจ้งให้ทราบ ความปรารถนาดีของท่านมีความหมายต่อเราเสมอ`;
+      }
+
+      document.getElementById('confirmModal').style.display = 'flex';
+      document.getElementById('rsvpForm').reset();
+    }
+
+    function closeModal() {
+      document.getElementById('confirmModal').style.display = 'none';
+    }
+
+    // --- Wish Wall handler ---
+    function handleWish(e) {
+      e.preventDefault();
+      const sender = document.getElementById('wishSender').value;
+      const message = document.getElementById('wishMessage').value;
+
+      if (!sender.trim() || !message.trim()) return;
+
+      const card = document.createElement('div');
+      card.className = 'wish-card';
+      card.innerHTML = `<div><span class="wish-sender">${sender}</span> <span class="wish-time">เมื่อสักครู่</span></div><div class="wish-body">${message}</div>`;
+
+      const container = document.getElementById('wishesContainer');
+      container.insertBefore(card, container.firstChild);
+
+      showToast("ส่งคำอวยพรเรียบร้อยแล้ว ขอบพระคุณครับ/ค่ะ 🌿");
+      document.getElementById('wishForm').reset();
+    }
+
+    // --- Warm Ambient Acoustic Guitar / Piano Synthesizer (Zero External Audio File) ---
+    let audioCtx = null;
+    let isPlayingMusic = false;
+    let melodyInterval = null;
+
+    // Gentle warm acoustic guitar / warm electric piano frequencies (Hz)
+    const acousticNotes = [
+      196.00, 220.00, 246.94, 293.66, 329.63, // G3, A3, B3, D4, E4
+      392.00, 440.00, 493.88, 587.33, 659.25  // G4, A4, B4, D5, E5
+    ];
+
+    function playAcousticNote(freq) {
+      if (!audioCtx) return;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      osc.type = 'triangle'; // warm acoustic feel
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+      gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.09, audioCtx.currentTime + 0.05);
+      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 2.6);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      osc.start();
+      osc.stop(audioCtx.currentTime + 2.7);
+    }
+
+    function startAcousticBGM() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+
+      let step = 0;
+      const pattern = [0, 2, 4, 3, 5, 4, 2, 1, 4, 6, 7, 5, 4, 2, 3, 0];
+
+      melodyInterval = setInterval(() => {
+        const noteIdx = pattern[step % pattern.length];
+        playAcousticNote(acousticNotes[noteIdx]);
+        step++;
+      }, 620);
+    }
+
+    function stopAcousticBGM() {
+      if (melodyInterval) {
+        clearInterval(melodyInterval);
+        melodyInterval = null;
+      }
+    }
+
+    function toggleMusic() {
+      const btn = document.getElementById('musicToggleBtn');
+      if (!isPlayingMusic) {
+        startAcousticBGM();
+        isPlayingMusic = true;
+        btn.classList.add('active');
+        showToast("เปิดดนตรีบรรเลงอบอุ่น 🌿");
+      } else {
+        stopAcousticBGM();
+        isPlayingMusic = false;
+        btn.classList.remove('active');
+        showToast("ปิดดนตรีบรรเลง 🔇");
+      }
+    }
+  </script>
+</body>
+</html>
